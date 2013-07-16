@@ -1,0 +1,11 @@
+[Unit]
+Description=Local system resume actions - mount
+After=root-resume.service
+
+[Service]
+Type=oneshot
+#ExecStart=-/usr/bin/mount /mnt/websupport/it-academy.sk
+ExecStart=-/usr/bin/mount /media/soulik
+
+[Install]
+WantedBy=root-resume.service

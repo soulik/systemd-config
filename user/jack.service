@@ -1,0 +1,21 @@
+[Unit]
+Description=JACK 2
+Before=sound.target
+Before=pulseaudio.service
+Requires=dbus.socket
+After=usb-reset.service
+
+[Service]
+Type=dbus
+BusName=org.jackaudio.Controller
+ExecStart=/usr/bin/jack_control start
+ExecStop=/usr/bin/jack_control stop
+ExecStopPost=/usr/bin/pkill -9 jackdbus
+SuccessExitStatus=0
+RemainAfterExit=true
+#Restart=always
+#RestartSec=5
+
+[Install]
+WantedBy=session.target
+WantedBy=sound.target

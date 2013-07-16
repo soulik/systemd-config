@@ -1,0 +1,10 @@
+[Unit]
+Description=Resume
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --user start jack.service
+ExecStart=/usr/bin/systemctl --user start pulseaudio.service
+
+[Install]
+WantedBy=resume-local.target

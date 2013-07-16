@@ -1,0 +1,9 @@
+[Unit]
+Description=UDiskie
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/udiskie
+
+[Install]
+WantedBy=session.target

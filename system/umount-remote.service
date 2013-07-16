@@ -1,0 +1,11 @@
+[Unit]
+Description=Local system suspend actions - umount
+Before=root-suspend.service
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/bin/umount /mnt/websupport/it-academy.sk
+ExecStart=-/usr/bin/umount /media/soulik
+
+[Install]
+WantedBy=root-suspend.service

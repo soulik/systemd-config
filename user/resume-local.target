@@ -1,0 +1,7 @@
+[Unit]
+Description=Resume target
+AllowIsolate=true
+After=root-resume.service
+
+[Install]
+WantedBy=suspend.target

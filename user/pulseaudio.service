@@ -1,0 +1,19 @@
+[Unit]
+Description=PulseAudio Sound System
+Documentation=man:pulseaudio(1)
+Before=sound.target
+After=jack.service
+BindsTo=jack.service
+Requires=dbus.socket
+
+[Service]
+Type=dbus
+BusName=org.pulseaudio.Server
+ExecStart=/usr/bin/pulseaudio --start --fail
+ExecStop=/usr/bin/pulseaudio --kill
+ExecStopPost=/usr/bin/pkill -9 pulseaudio
+RemainAfterExit=true
+
+[Install]
+WantedBy=session.target
+WantedBy=sound.target

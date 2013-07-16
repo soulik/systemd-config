@@ -1,0 +1,10 @@
+[Unit]
+Description=USB Devices Reset
+After=root-resume.service
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/local/bin/usbreset /dev/bus/usb/004/002
+
+[Install]
+WantedBy=root-resume.service

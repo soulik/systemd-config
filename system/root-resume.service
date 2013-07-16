@@ -1,0 +1,10 @@
+[Unit]
+Description=Local system resume actions
+After=suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl restart dhcpcd@enp4s0.service
+
+[Install]
+WantedBy=suspend.target

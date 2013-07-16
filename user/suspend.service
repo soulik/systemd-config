@@ -1,0 +1,10 @@
+[Unit]
+Description=Suspend
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --user stop pulseaudio.service
+ExecStart=/usr/bin/systemctl --user stop jack.service
+
+[Install]
+WantedBy=suspend-local.target

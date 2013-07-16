@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=systemd
+Comment=Runs 'systemd' as a user instance.
+Exec=/usr/lib/systemd/systemd --user &> ~/log/systemd.log

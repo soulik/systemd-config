@@ -1,0 +1,9 @@
+[Unit]
+Description=Cairo Composition Manager
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/cairo-compmgr
+
+[Install]
+WantedBy=vm.target

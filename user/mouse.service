@@ -1,0 +1,12 @@
+[Unit]
+Description=Mouse settings
+After=wm.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xinput set-prop 'Razer Razer Salmosa' 'Device Accel Constant Deceleration' 2
+ExecStart=/usr/bin/xset mouse 2 4
+RemainAfterExit=true
+
+[Install]
+WantedBy=environment.target

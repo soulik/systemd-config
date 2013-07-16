@@ -1,0 +1,13 @@
+[Unit]
+Description=kbdd daemon
+
+[Service]
+Type=forking
+PIDFile=%t/kbdd.pid
+ExecStart=/usr/bin/kbdd
+ExecStop=/usr/bin/pkill kbdd
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=environment.target

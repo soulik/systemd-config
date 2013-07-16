@@ -1,0 +1,12 @@
+[Unit]
+Description=Qt Jack Control
+After=wm.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/qjackctl
+ExecStop=/usr/bin/pkill qjackctl
+RemainAfterExit=true
+
+[Install]
+WantedBy=session.target

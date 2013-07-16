@@ -1,0 +1,12 @@
+[Unit]
+Description=ClipIt
+After=wm.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/clipit
+ExecStop=/usr/bin/pkill clipit
+RemainAfterExit=true
+
+[Install]
+WantedBy=session.target

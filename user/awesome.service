@@ -3,6 +3,7 @@ Description=Awesome WM
 
 [Service]
 ExecStart=/usr/bin/awesome
+ExecStop=/usr/local/bin/awesome-quit
 Restart=on-failure
 
 [Install]

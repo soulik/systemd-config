@@ -4,6 +4,7 @@ Documentation=man:pulseaudio(1)
 Before=sound.target
 After=jack.service
 BindsTo=jack.service
+#Requires=jack.service
 Requires=dbus.socket
 
 [Service]

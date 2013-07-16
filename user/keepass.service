@@ -1,0 +1,12 @@
+[Unit]
+Description=KeePass
+After=wm.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/keepassx
+ExecStop=/usr/bin/pkill keepassx
+RemainAfterExit=true
+
+[Install]
+WantedBy=session.target
